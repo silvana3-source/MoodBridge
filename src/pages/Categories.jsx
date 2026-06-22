@@ -33,10 +33,10 @@ export default function Categories() {
   return (
     <div className="page">
       <div className="container">
-        <h2 style={{ marginBottom: "4px" }}>Find your people</h2>
-        <p className="text-muted text-sm" style={{ marginBottom: "20px" }}>
-          Pick a category or create your own
-        </p>
+        <div style={{ marginBottom: "20px" }}>
+          <h2 style={{ fontSize: "1.4rem", marginBottom: "4px" }}>How are you feeling?</h2>
+          <p className="text-muted text-sm">Choose a category or create your own to find people nearby</p>
+        </div>
 
         {/* Search */}
         <div className="search-bar">
@@ -52,11 +52,11 @@ export default function Categories() {
           />
         </div>
 
-        {/* Custom tag creator */}
-        <div className="card" style={{ marginBottom: "20px", borderColor: "var(--primary)" }}>
-          <h3 style={{ fontSize: "0.9rem", marginBottom: "8px" }}>✨ Create your own tag</h3>
-          <p className="text-xs text-dim" style={{ marginBottom: "10px" }}>
-            Can't find what you're looking for? Make a tag and see who joins.
+        {/* Create custom tag */}
+        <div className="card" style={{ marginBottom: "20px", borderColor: "var(--border)" }}>
+          <div style={{ fontWeight: 600, fontSize: "0.9rem", marginBottom: "6px" }}>Can't find what you're looking for?</div>
+          <p className="text-xs text-dim" style={{ marginBottom: "12px" }}>
+            Create your own tag — if others search for it, you'll find each other.
           </p>
           <div className="tag-input-container">
             {myTags.map((tag) => (
@@ -67,17 +67,15 @@ export default function Categories() {
             ))}
             <input
               className="tag-input"
-              placeholder={myTags.length === 0 ? 'e.g. "timeline shifts", "AI talk", "80s goth"...' : "Add another..."}
+              placeholder={myTags.length === 0 ? 'e.g. "timeline shifts", "AI development", "80s goth music"...' : "Add another..."}
               value={customTag}
               onChange={(e) => setCustomTag(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter") addCustomTag();
-              }}
+              onKeyDown={(e) => { if (e.key === "Enter") addCustomTag(); }}
             />
           </div>
           <div style={{ display: "flex", gap: "8px", marginTop: "10px" }}>
             <button className="btn btn-sm btn-secondary" onClick={addCustomTag} disabled={!customTag.trim()}>
-              + Add tag
+              Add tag
             </button>
             {myTags.length > 0 && (
               <button className="btn btn-sm btn-primary" onClick={searchCustom}>
@@ -88,6 +86,9 @@ export default function Categories() {
         </div>
 
         {/* Category grid */}
+        <div style={{ marginBottom: "12px" }}>
+          <h3 style={{ fontSize: "1rem" }}>Browse categories</h3>
+        </div>
         <div className="cat-grid">
           {filtered.map((cat) => (
             <CategoryCard key={cat.id} category={cat} />
@@ -96,8 +97,8 @@ export default function Categories() {
 
         {filtered.length === 0 && (
           <div className="empty-state">
-            <div className="icon">🔍</div>
-            <h3>No categories found</h3>
+            <div className="icon" style={{ fontSize: "2.5rem" }}>🔍</div>
+            <h3 style={{ fontSize: "1.1rem" }}>No categories found</h3>
             <p className="text-muted text-sm">Try a different search or create a custom tag above</p>
           </div>
         )}

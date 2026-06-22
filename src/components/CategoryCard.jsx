@@ -12,7 +12,7 @@ export default function CategoryCard({ category }) {
       <div className="icon">{category.icon}</div>
       <div className="name">{category.name}</div>
       <div className="desc">{category.description}</div>
-      <div className="sub-badge">{category.subcategories.length} topics</div>
+      <div className="sub-badge">{category.subcategories.length} subtopics</div>
     </div>
   );
 }

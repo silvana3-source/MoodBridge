@@ -4,130 +4,109 @@ export default function Home() {
   const navigate = useNavigate();
 
   return (
-    <div className="page" style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-      <div className="container" style={{ flex: 1, display: "flex", flexDirection: "column", justifyContent: "center" }}>
-        <div className="slide-up" style={{ textAlign: "center" }}>
-          {/* Logo */}
-          <div style={{ fontSize: "4rem", marginBottom: "4px" }}>🌉</div>
-          <h1 style={{ fontSize: "2.6rem", marginBottom: "4px" }}>
-            <span className="gradient-text">MoodBridge</span>
-          </h1>
-          <p className="text-muted" style={{ fontSize: "1rem", marginBottom: "8px", lineHeight: 1.5 }}>
-            Ever felt alone in a crowd? <br />
-            <strong>Find someone who feels the same way you do — right now.</strong>
-          </p>
+    <div className="hero-section">
+      <div className="hero-bg" />
 
-          {/* How it works — SIMPLE steps */}
-          <div style={{
-            background: "var(--bg-card)",
-            borderRadius: "var(--radius)",
-            padding: "20px",
-            marginBottom: "28px",
-            border: "1px solid var(--border)",
-            textAlign: "left"
-          }}>
-            <div style={{ fontWeight: 700, marginBottom: "14px", fontSize: "0.95rem", textAlign: "center" }}>How it works</div>
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
+        <div className="slide-up">
 
-            <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <span style={{
-                  background: "var(--primary)",
-                  color: "white",
-                  width: "28px",
-                  height: "28px",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  flexShrink: 0
-                }}>1</span>
+          {/* Logo / Brand */}
+          <div style={{ textAlign: "center", marginBottom: "36px" }}>
+            <div style={{ fontSize: "3rem", marginBottom: "4px", opacity: 0.9 }}>🌉</div>
+            <h1 style={{ fontSize: "2.4rem", letterSpacing: "-0.03em" }}>
+              MoodBridge
+            </h1>
+            <p style={{ color: "var(--text-muted)", fontSize: "0.95rem", marginTop: "4px" }}>
+              Find someone who feels the same way you do.
+            </p>
+          </div>
+
+          {/* Problem / Solution — immediate clarity */}
+          <div
+            style={{
+              background: "var(--bg-card)",
+              borderRadius: "var(--radius)",
+              padding: "24px",
+              border: "1px solid var(--border)",
+              marginBottom: "28px"
+            }}
+          >
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.6, color: "var(--text-muted)", marginBottom: "20px" }}>
+              <span style={{ color: "var(--primary-light)", fontWeight: 600 }}>Struggling with grief?</span> Lonely after a breakup? <span style={{ color: "var(--primary-light)", fontWeight: 600 }}>Just want to talk about the 90s with someone who remembers?</span>
+            </p>
+            <p style={{ fontSize: "0.95rem", lineHeight: 1.6, color: "var(--text)" }}>
+              MoodBridge connects you with people nearby who share your <strong>exact emotional state</strong> or interest — right now. No small talk. No awkward introductions. Just real connection.
+            </p>
+          </div>
+
+          {/* How it works — clean, minimal */}
+          <div style={{ marginBottom: "28px" }}>
+            <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+              <div className="feature-card">
+                <div className="feature-icon" style={{ background: "rgba(91, 79, 215, 0.12)", color: "var(--primary-light)" }}>
+                  01
+                </div>
                 <div>
-                  <div style={{ fontWeight: 600, fontSize: "0.9rem" }}>Tell us how you feel</div>
-                  <div className="text-xs text-dim">Sad? Nostalgic? Curious about the 90s? Pick a mood or make your own tag.</div>
+                  <div style={{ fontWeight: 600, fontSize: "0.9rem", marginBottom: "2px" }}>Tell us your mood</div>
+                  <div style={{ color: "var(--text-dim)", fontSize: "0.8rem", lineHeight: 1.4 }}>
+                    Pick from categories like grief, nostalgia, spirituality — or create your own tag like "timeline shifts" or "AI talk"
+                  </div>
                 </div>
               </div>
 
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <span style={{
-                  background: "var(--primary)",
-                  color: "white",
-                  width: "28px",
-                  height: "28px",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  flexShrink: 0
-                }}>2</span>
+              <div className="feature-card">
+                <div className="feature-icon" style={{ background: "rgba(91, 79, 215, 0.12)", color: "var(--primary-light)" }}>
+                  02
+                </div>
                 <div>
-                  <div style={{ fontWeight: 600, fontSize: "0.9rem" }}>Meet people who get it</div>
-                  <div className="text-xs text-dim">Matched with others feeling the same way near you. No awkward intros.</div>
+                  <div style={{ fontWeight: 600, fontSize: "0.9rem", marginBottom: "2px" }}>Match with someone who gets it</div>
+                  <div style={{ color: "var(--text-dim)", fontSize: "0.8rem", lineHeight: 1.4 }}>
+                    See people near you who chose the same mood. No profiles, no swiping — just shared feeling.
+                  </div>
                 </div>
               </div>
 
-              <div style={{ display: "flex", alignItems: "center", gap: "12px" }}>
-                <span style={{
-                  background: "var(--success)",
-                  color: "white",
-                  width: "28px",
-                  height: "28px",
-                  borderRadius: "50%",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.8rem",
-                  fontWeight: 700,
-                  flexShrink: 0
-                }}>3</span>
+              <div className="feature-card">
+                <div className="feature-icon" style={{ background: "rgba(46, 213, 115, 0.12)", color: "var(--success)" }}>
+                  03
+                </div>
                 <div>
-                  <div style={{ fontWeight: 600, fontSize: "0.9rem" }}>Chat or meet up — safely</div>
-                  <div className="text-xs text-dim">ID verification required for in-person meetups. Always in public places.</div>
+                  <div style={{ fontWeight: 600, fontSize: "0.9rem", marginBottom: "2px" }}>Chat or meet up — safely</div>
+                  <div style={{ color: "var(--text-dim)", fontSize: "0.8rem", lineHeight: 1.4 }}>
+                    Chat first. When you're ready, verify your ID (phone + government ID) and meet at a public place. Safety built in.
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* What you can talk about — visual examples */}
-          <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", justifyContent: "center", marginBottom: "28px" }}>
-            {[
-              { emoji: "😢", label: "Grief" },
-              { emoji: "💔", label: "Breakup" },
-              { emoji: "📼", label: "90s Nostalgia" },
-              { emoji: "✨", label: "Spirituality" },
-              { emoji: "👽", label: "Unexplained" },
-              { emoji: "🤖", label: "AI & Tech" },
-              { emoji: "☕", label: "Boredom" },
-              { emoji: "🧠", label: "Deep Talks" },
-            ].map((item) => (
-              <span key={item.label} style={{
-                padding: "6px 12px",
-                background: "rgba(108, 92, 231, 0.1)",
-                borderRadius: "20px",
-                fontSize: "0.8rem",
-                color: "var(--text-muted)"
-              }}>
-                {item.emoji} {item.label}
-              </span>
-            ))}
+          {/* Safety note */}
+          <div style={{
+            textAlign: "center",
+            padding: "14px",
+            background: "rgba(46, 213, 115, 0.06)",
+            borderRadius: "var(--radius-sm)",
+            border: "1px solid rgba(46, 213, 115, 0.1)",
+            marginBottom: "24px"
+          }}>
+            <span style={{ fontSize: "0.8rem", color: "var(--text-muted)" }}>
+              🛡️ Phone verification required · ID verification for meetups · Your privacy matters
+            </span>
           </div>
 
-          {/* CTA Buttons */}
+          {/* CTA */}
           <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
             <button className="btn btn-primary" onClick={() => navigate("/signup")}>
-              Get Started — It's Free
+              Get Started Free
             </button>
             <button className="btn btn-secondary" onClick={() => navigate("/home")}>
               I already have an account
             </button>
           </div>
 
-          <p className="text-xs text-dim" style={{ marginTop: "20px", lineHeight: 1.5 }}>
-            🛡️ Phone verification required. ID verification for meetups.<br />
-            Your safety is our priority.
+          {/* Footer */}
+          <p style={{ textAlign: "center", color: "var(--text-dim)", fontSize: "0.7rem", marginTop: "20px", lineHeight: 1.5 }}>
+            By continuing, you agree to our Terms & Privacy Policy
           </p>
         </div>
       </div>
